@@ -187,7 +187,7 @@ export default function Report() {
     // ローカルストレージから回答データを読み込み
     const savedAnswers = localStorage.getItem('gengoka-answers');
     if (savedAnswers) {
-      const parsedAnswers = JSON.parse(savedAnswers).map((answer: any) => ({
+      const parsedAnswers = JSON.parse(savedAnswers).map((answer: UserAnswer) => ({
         ...answer,
         timestamp: new Date(answer.timestamp)
       }));

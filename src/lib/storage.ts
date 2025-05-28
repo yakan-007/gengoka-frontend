@@ -71,7 +71,7 @@ export async function getAnswers(): Promise<UserAnswer[]> {
   return new Promise((resolve, reject) => {
     const request = store.getAll();
     request.onsuccess = () => {
-      const answers = request.result.map((answer: any) => ({
+      const answers = request.result.map((answer: UserAnswer) => ({
         ...answer,
         submittedAt: new Date(answer.submittedAt),
       }));

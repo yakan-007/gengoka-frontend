@@ -232,7 +232,7 @@ export default function Home() {
                 try {
                   const result = await testGemini();
                   setGeminiResult(result);
-                } catch {
+                } catch (e) {
                   setGeminiResult('エラーが発生しました');
                 } finally {
                   setLoadingGemini(false);
