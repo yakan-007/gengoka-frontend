@@ -1,24 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gengoka Frontend - 言語化の極意
 
-## Getting Started
+言語化の極意（Gengoka）は、日本のビジネスコミュニケーション能力向上を支援するAI学習アプリです。
 
-First, run the development server:
+## 機能
+
+- 3フェーズ15問題の段階的学習システム
+- Google Gemini APIによるAI添削機能
+- 学習履歴の記録・分析
+- 個人分析レポート生成
+
+## 技術構成
+
+- **フロントエンド**: Next.js 15 + TypeScript + TailwindCSS
+- **バックエンド**: FastAPI + Python
+- **AI**: Google Gemini API
+
+## ローカル開発
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Vercelデプロイ設定
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 必要な環境変数
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Vercelダッシュボードで以下の環境変数を設定してください：
+
+```
+ESLINT_NO_DEV_ERRORS=true
+NEXT_PUBLIC_API_URL=https://your-backend-url.vercel.app
+NODE_ENV=production
+```
+
+### ビルド設定
+
+- **Build Command**: `npm run build`
+- **Output Directory**: `.next`
+- **Install Command**: `npm install`
+- **Framework Preset**: Next.js
+
+### デプロイ手順
+
+1. GitHubリポジトリをVercelに接続
+2. 環境変数を設定
+3. デプロイを実行
+
+## API連携
+
+バックエンドAPI（FastAPI）が別途必要です。
+バックエンドのURLを`NEXT_PUBLIC_API_URL`環境変数に設定してください。
 
 ## Learn More
 

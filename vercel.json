@@ -1,0 +1,21 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "env": {
+    "ESLINT_NO_DEV_ERRORS": "true",
+    "NEXT_PUBLIC_API_URL": "https://your-backend-url.vercel.app",
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "ESLINT_NO_DEV_ERRORS": "true"
+    }
+  },
+  "functions": {
+    "pages/api/**/*.js": {
+      "maxDuration": 30
+    }
+  }
+} 
