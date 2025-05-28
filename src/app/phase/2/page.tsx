@@ -147,7 +147,7 @@ export default function Phase2() {
       } else {
         setFeedback('申し訳ございません。フィードバックの取得に失敗しました。もう一度お試しください。');
       }
-    } catch (error) {
+    } catch {
       setFeedback('ネットワークエラーが発生しました。接続を確認してもう一度お試しください。');
     } finally {
       setIsLoading(false);
